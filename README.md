@@ -27,7 +27,7 @@
 
 ### 1. Clone & Setup Environment
 ```bash
-git clone https://github.com/mukilarasu55/hiver-support-agent.git
+git clone https://github.com/Mukil630/hiver-support-agent.git
 cd hiver-support-agent
 
 # Optional virtual environment
