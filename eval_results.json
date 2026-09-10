@@ -1,0 +1,215 @@
+{
+  "human_judge_alignment": {
+    "cohens_kappa": 0.4545,
+    "interpretation": "Moderate Agreement (0.41 - 0.60)",
+    "observed_agreement": 0.64,
+    "chance_agreement": 0.34,
+    "pearson_r": 0.7354,
+    "mean_absolute_error": 1.1836,
+    "calibration_samples": 50
+  },
+  "Baseline 1 (Trivial Heuristic)": {
+    "intent_accuracy": 0.175,
+    "intent_macro_f1": 0.0496,
+    "escalate_accuracy": 0.54,
+    "escalate_precision": 0.6667,
+    "escalate_recall": 0.0632,
+    "escalate_f1": 0.1154,
+    "missed_escalation_rate": 0.9368,
+    "avg_judge_score_out_of_5": 3.11,
+    "detailed_intent_metrics": {
+      "accuracy": 0.175,
+      "macro_precision": 0.0292,
+      "macro_recall": 0.1667,
+      "macro_f1": 0.0496,
+      "per_class": {
+        "APPLE_ID_SECURITY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 35
+        },
+        "CONNECTIVITY_ACCESSORIES": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 30
+        },
+        "DEVICE_BATTERY_POWER": {
+          "precision": 0.175,
+          "recall": 1.0,
+          "f1_score": 0.2979,
+          "support": 35
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 30
+        },
+        "OS_SOFTWARE_UPDATE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 35
+        },
+        "SUBSCRIPTION_BILLING": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 35
+        }
+      },
+      "total_samples": 200
+    },
+    "detailed_escalate_metrics": {
+      "accuracy": 0.54,
+      "precision": 0.6667,
+      "recall": 0.0632,
+      "f1_score": 0.1154,
+      "confusion_matrix": {
+        "true_escalate_pred_escalate (TP)": 6,
+        "true_autohandle_pred_escalate (FP)": 3,
+        "true_escalate_pred_autohandle (FN) - DANGEROUS": 89,
+        "true_autohandle_pred_autohandle (TN)": 102
+      },
+      "missed_escalation_rate (FN Rate)": 0.9368
+    }
+  },
+  "Baseline 2 (Simple TF-IDF)": {
+    "intent_accuracy": 0.565,
+    "intent_macro_f1": 0.5789,
+    "escalate_accuracy": 0.595,
+    "escalate_precision": 0.6591,
+    "escalate_recall": 0.3053,
+    "escalate_f1": 0.4173,
+    "missed_escalation_rate": 0.6947,
+    "avg_judge_score_out_of_5": 3.22,
+    "detailed_intent_metrics": {
+      "accuracy": 0.565,
+      "macro_precision": 0.741,
+      "macro_recall": 0.5571,
+      "macro_f1": 0.5789,
+      "per_class": {
+        "APPLE_ID_SECURITY": {
+          "precision": 0.84,
+          "recall": 0.6,
+          "f1_score": 0.7,
+          "support": 35
+        },
+        "CONNECTIVITY_ACCESSORIES": {
+          "precision": 0.9286,
+          "recall": 0.4333,
+          "f1_score": 0.5909,
+          "support": 30
+        },
+        "DEVICE_BATTERY_POWER": {
+          "precision": 0.3235,
+          "recall": 0.9429,
+          "f1_score": 0.4818,
+          "support": 35
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.5789,
+          "recall": 0.3667,
+          "f1_score": 0.449,
+          "support": 30
+        },
+        "OS_SOFTWARE_UPDATE": {
+          "precision": 0.8462,
+          "recall": 0.6286,
+          "f1_score": 0.7213,
+          "support": 35
+        },
+        "SUBSCRIPTION_BILLING": {
+          "precision": 0.9286,
+          "recall": 0.3714,
+          "f1_score": 0.5306,
+          "support": 35
+        }
+      },
+      "total_samples": 200
+    },
+    "detailed_escalate_metrics": {
+      "accuracy": 0.595,
+      "precision": 0.6591,
+      "recall": 0.3053,
+      "f1_score": 0.4173,
+      "confusion_matrix": {
+        "true_escalate_pred_escalate (TP)": 29,
+        "true_autohandle_pred_escalate (FP)": 15,
+        "true_escalate_pred_autohandle (FN) - DANGEROUS": 66,
+        "true_autohandle_pred_autohandle (TN)": 90
+      },
+      "missed_escalation_rate (FN Rate)": 0.6947
+    }
+  },
+  "Proposed System (Grounded Agent)": {
+    "intent_accuracy": 0.815,
+    "intent_macro_f1": 0.8154,
+    "escalate_accuracy": 0.795,
+    "escalate_precision": 0.7328,
+    "escalate_recall": 0.8947,
+    "escalate_f1": 0.8057,
+    "missed_escalation_rate": 0.1053,
+    "avg_judge_score_out_of_5": 4.18,
+    "detailed_intent_metrics": {
+      "accuracy": 0.815,
+      "macro_precision": 0.8226,
+      "macro_recall": 0.8127,
+      "macro_f1": 0.8154,
+      "per_class": {
+        "APPLE_ID_SECURITY": {
+          "precision": 0.8529,
+          "recall": 0.8286,
+          "f1_score": 0.8406,
+          "support": 35
+        },
+        "CONNECTIVITY_ACCESSORIES": {
+          "precision": 0.8889,
+          "recall": 0.8,
+          "f1_score": 0.8421,
+          "support": 30
+        },
+        "DEVICE_BATTERY_POWER": {
+          "precision": 0.7143,
+          "recall": 0.8571,
+          "f1_score": 0.7792,
+          "support": 35
+        },
+        "HARDWARE_PHYSICAL_DAMAGE": {
+          "precision": 0.8462,
+          "recall": 0.7333,
+          "f1_score": 0.7857,
+          "support": 30
+        },
+        "OS_SOFTWARE_UPDATE": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1_score": 0.8,
+          "support": 35
+        },
+        "SUBSCRIPTION_BILLING": {
+          "precision": 0.8333,
+          "recall": 0.8571,
+          "f1_score": 0.8451,
+          "support": 35
+        }
+      },
+      "total_samples": 200
+    },
+    "detailed_escalate_metrics": {
+      "accuracy": 0.795,
+      "precision": 0.7328,
+      "recall": 0.8947,
+      "f1_score": 0.8057,
+      "confusion_matrix": {
+        "true_escalate_pred_escalate (TP)": 85,
+        "true_autohandle_pred_escalate (FP)": 31,
+        "true_escalate_pred_autohandle (FN) - DANGEROUS": 10,
+        "true_autohandle_pred_autohandle (TN)": 74
+      },
+      "missed_escalation_rate (FN Rate)": 0.1053
+    }
+  }
+}

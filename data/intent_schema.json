@@ -1,0 +1,135 @@
+{
+  "brand": "@AppleSupport",
+  "version": "1.0.0",
+  "intents": {
+    "DEVICE_BATTERY_POWER": {
+      "display_name": "Battery & Power Management",
+      "description": "Issues concerning rapid battery drain, device overheating, charging cable failure, wireless charging, or battery health degradation.",
+      "default_action": "AUTO_HANDLE",
+      "auto_handle_criteria": "Software-level battery optimization, standard diagnostic advice, Low Power Mode guidelines, iOS battery health check.",
+      "escalation_criteria": "Physical battery swelling, burning smell, charging port scorched, rapid 100% to 0% shutdown despite service warning.",
+      "keywords": [
+        "battery",
+        "drain",
+        "charge",
+        "charging",
+        "overheating",
+        "hot",
+        "battery health",
+        "charger",
+        "cable",
+        "dies fast"
+      ]
+    },
+    "OS_SOFTWARE_UPDATE": {
+      "display_name": "Operating System & Update Glitches",
+      "description": "Bugs, app crashes, freezing, boot loops, update installation errors across iOS, iPadOS, macOS, or watchOS.",
+      "default_action": "AUTO_HANDLE",
+      "auto_handle_criteria": "Post-update minor UI glitches, app force close troubleshooting, cache clearing, standard force-restart guidelines.",
+      "escalation_criteria": "Device stuck in continuous boot-loop (white Apple logo), bricked after update, DFU recovery mode failure, critical OS crash causing total device lock.",
+      "keywords": [
+        "update",
+        "ios",
+        "ios 17",
+        "ios 16",
+        "frozen",
+        "freeze",
+        "crash",
+        "stuck on apple logo",
+        "boot loop",
+        "glitch",
+        "lag"
+      ]
+    },
+    "APPLE_ID_SECURITY": {
+      "display_name": "Apple ID & Account Security",
+      "description": "Account lockouts, 2-Factor Authentication (2FA) verification, forgotten credentials, phishing attempts, unauthorized sign-ins.",
+      "default_action": "ESCALATE",
+      "auto_handle_criteria": "Standard password reset link (iforgot.apple.com), general 2FA setup guidance.",
+      "escalation_criteria": "Account takeover suspected, recovery key lost, unauthorized device added, phishing link clicked with credential leakage, device Activation Lock bypass requests.",
+      "keywords": [
+        "apple id",
+        "icloud",
+        "locked",
+        "password",
+        "2fa",
+        "two-factor",
+        "verification code",
+        "hacked",
+        "stolen",
+        "unauthorized",
+        "activation lock"
+      ]
+    },
+    "HARDWARE_PHYSICAL_DAMAGE": {
+      "display_name": "Hardware Repair & Physical Damage",
+      "description": "Cracked screen, broken camera lens, water/liquid ingress, damaged speaker, button malfunction, frame bent.",
+      "default_action": "ESCALATE",
+      "auto_handle_criteria": "Guidance to schedule Genius Bar or check AppleCare status only.",
+      "escalation_criteria": "Any physical defect, water submersion, shattered display, physical speaker/mic hardware failure requiring technician inspection.",
+      "keywords": [
+        "screen cracked",
+        "cracked",
+        "broken",
+        "water damage",
+        "dropped",
+        "speaker",
+        "microphone",
+        "camera glass",
+        "bent",
+        "repair",
+        "genius bar",
+        "applecare"
+      ]
+    },
+    "SUBSCRIPTION_BILLING": {
+      "display_name": "App Store, Subscriptions & Billing",
+      "description": "Unrecognized credit card charges, recurring App Store subscriptions, refund requests for apps/in-app purchases, family sharing payment issues.",
+      "default_action": "AUTO_HANDLE",
+      "auto_handle_criteria": "Guiding customer to reportaproblem.apple.com for self-service refund, explaining subscription cancellation in Settings.",
+      "escalation_criteria": "Disputed fraudulent charges over , repeated billing after cancellation, account billed for family member without authorization, refund rejected wrongfully.",
+      "keywords": [
+        "refund",
+        "charged",
+        "billing",
+        "subscription",
+        "app store",
+        "receipt",
+        "unauthorized charge",
+        "payment",
+        "money",
+        "deducted"
+      ]
+    },
+    "CONNECTIVITY_ACCESSORIES": {
+      "display_name": "Connectivity & Accessory Pairing",
+      "description": "Wi-Fi dropouts, Bluetooth pairing failure with AirPods, Apple Watch sync issues, CarPlay disconnection.",
+      "default_action": "AUTO_HANDLE",
+      "auto_handle_criteria": "Network settings reset, AirPods unpair/re-pair steps, Bluetooth toggle, Wi-Fi DNS troubleshooting.",
+      "escalation_criteria": "AirPods firmware flash failure, complete hardware failure of Wi-Fi/Bluetooth modem (greyed out toggle), warranty replacement required.",
+      "keywords": [
+        "wifi",
+        "bluetooth",
+        "airpods",
+        "carplay",
+        "apple watch",
+        "pairing",
+        "disconnect",
+        "connect",
+        "drop",
+        "cellular",
+        "no service"
+      ]
+    }
+  },
+  "escalation_policies": {
+    "mandatory_escalate_flags": [
+      "LEGAL_THREAT",
+      "HOSTILE_SENTIMENT",
+      "SECURITY_BREACH",
+      "PHYSICAL_HARDWARE_DEFECT",
+      "REPEATED_UNRESOLVED_INTERACTION"
+    ],
+    "confidence_threshold": 0.72
+  }
+}
